@@ -1,19 +1,11 @@
-project(gomoku)
-cmake_minimum_required(VERSION 3.21)
-
-set(GOMOKU pbrain-eplodor)
+cmake_minimum_required(VERSION 3.18)
+project(gomoku LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 20)
 
+include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include/)
+conan_basic_setup()
 
-set(
-  GOMOKU_SRCS
-  src/ai.cpp
-  src/board.cpp
-  src/boardgame.cpp
-  src/gomoku.cpp
-  src/pawn.cpp
-  src/main.cpp
-  )
+file(GLOB SOURCES "src/*.cpp")
 
-add_executable(${GOMOKU} ${GOMOKU_SRCS})
+add_executable(pbrain-eplodor ${SOURCES})

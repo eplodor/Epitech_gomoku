@@ -1,29 +1,20 @@
 #include "board.hpp"
 #include "pawn.hpp"
-#include <vector>
-#include <iostream>
 
-Board::Board(const size_t size)
+Board::Board(const size_t size_x, const size_t size_y)
 {
-	this->board = std::vector<std::vector<Pawn>>(size, std::vector<Pawn>(size));
+	this->board = boost::numeric::ublas::matrix<Pawn>(size_x, size_y);
 }
 
 Board::~Board()
 {
 }
 
-void	Board::resize(const size_t new_size)
+void Board::display() const
 {
-	this->board.resize(new_size);
-	for (auto it = this->board.begin() ; it != this->board.end() ; it++)
-		(*it).resize(new_size);
-}
-
-void	Board::display() const
-{
-	for (auto it = this->board.begin() ; it != this->board.end() ; it++) {
-		for (auto it2 = (*it).begin() ; it2 != (*it).end() ; it2++)
-			std::cout << *it2 << " ";
+	for (auto it = this->board.begin1() ; it != this->board.end1() ; it++) {
+		for (auto it2 = this->board.begin2() ; it2 != this->board.end2() ; it2++)
+			std::cout << *it2;
 		std::cout << std::endl;
 	}
 }

@@ -1,14 +1,14 @@
 #pragma once
 
-#include <vector>
+#include <boost/numeric/ublas/matrix.hpp>
+#include <boost/numeric/ublas/io.hpp>
 #include "pawn.hpp"
 
 class Board
 {
 public:
-	Board(size_t size);
+	Board(size_t size_x, size_t size_y);
 	~Board();
-	std::vector<std::vector<Pawn>>	board;
-	void				resize(const size_t new_size);
-	void				display() const;
+	boost::numeric::ublas::matrix<Pawn>	board;
+	void display() const;
 };

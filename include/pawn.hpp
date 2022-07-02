@@ -10,5 +10,6 @@ public:
 	size_t	id = 0;
 	Pawn();
 	~Pawn();
+	void place(size_t x, size_t y, size_t id);
 	friend std::ostream &operator<<(std::ostream &, const Pawn &);
 };

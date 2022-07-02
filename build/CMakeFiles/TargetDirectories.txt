@@ -1,0 +1,3 @@
+/workspaces/Epitech_gomoku-main/build/CMakeFiles/rebuild_cache.dir
+/workspaces/Epitech_gomoku-main/build/CMakeFiles/edit_cache.dir
+/workspaces/Epitech_gomoku-main/build/CMakeFiles/pbrain-eplodor.dir
