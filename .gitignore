@@ -1,5 +1,10 @@
 # Prerequisites
 *.d
+.vscode
+.devcontainer
+build/
+commit.txt
+
 
 # Compiled Object files
 *.slo
